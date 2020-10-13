@@ -120,13 +120,6 @@ Answer FindExt(double **&simplexTable, std::map<int, int> &basis, std::map<int, 
         basis[positiveLinePos] = free[positiveColumnPos - 1];
         free[positiveColumnPos - 1] = save;
         transformSimplexTable(simplexTable, positiveLinePos, positiveColumnPos, line, column);
-        for(size_t g =0; g< line; g++){
-            for(size_t f =0; f<column; f++){
-                std::cout<<simplexTable[g][f]<<" ";
-            }
-            std::cout<<std::endl;
-        }
-        std::cout<<std::endl;
     }
 
     Answer forReturn = CreateAnswer(simplexTable, basis, free, line);
